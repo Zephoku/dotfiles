@@ -1,6 +1,0 @@
-extends layout
-
-block footer
-  footer
-    div.container
-      p All Rights Reserved.

@@ -1,8 +1,0 @@
-/* 
- * GET Firebase Example Page
- */
-
-exports.page = function(req, res) {
-  console.log("Hello from controller``");
-  res.render('firebase_example', {title: 'Firebase Setup'});
-};

@@ -1,7 +1,0 @@
-/* 
- * GET Firebase Example Page
- */
-
-exports.fire = function(req, res) {
-  res.render("fire", {title: 'Firebase Setup'});
-};
