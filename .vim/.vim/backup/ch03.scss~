@@ -1,0 +1,87 @@
+@import "bourbon/bourbon";
+@import "bitters/bitters";
+@import "neat/neat";
+
+#transition13 {
+  width: 800px;
+	background:url(../img/ch03/Notrespassingsign.jpg) no-repeat 0 0;
+  background-position: 30% 0%;
+}
+#transition21 {
+  width: 800px;
+	background:url(../img/ch03/ManchesterSquareCurrentGoogleMap.jpg) no-repeat 0 0;
+  background-position: 20% 0%;
+}
+
+#page1 > .text {
+  text-align: center;
+  color: #fff;
+}
+
+#page1text1 {
+  top: 3%;
+  left: 25%;
+  width: 50%;
+}
+#page1text2 {
+  bottom: 6%;
+  width: 100%;
+}
+
+#page3text1 {
+  top: 16%;
+  left: 40%;
+}
+#page3text2 {
+  top: 24%;
+  right: 9%;
+}
+#page3text3 {
+  width: 50%;
+  top: 40%;
+  right: 0%;
+}
+#page3text4 {
+  top: 58%;
+  right: 4%;
+}
+#page4text {
+  text-align: center;
+  width: 100%;
+  bottom: 20%;
+}
+#page7text {
+  bottom: 20%;
+  right: 8%;
+}
+#page14text {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  bottom: 10%;
+}
+#page22 > .text {
+  color: #fff;
+}
+#page22text1 {
+  width: 50%;
+  top: 26%;
+  left: 4%;
+}
+#page22text2 {
+  width: 40%;
+  bottom: 20%;
+  left: 52%;
+}
+#page31text1 {
+  color: #fff;
+  text-align: right;
+  width: 14%;
+  top: 18%;
+  right: 5%;
+}
+#page31text2 {
+  width: 14%;
+  top: 28%;
+  right: 5%;
+}

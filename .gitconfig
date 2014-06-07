@@ -1,0 +1,9 @@
+[user]
+	name = Robert Nguyen
+	email = roberttnb@gmail.com
+[core]
+	editor = vim
+[github]
+	user = Zephoku
+[push]
+	default = simple

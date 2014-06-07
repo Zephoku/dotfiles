@@ -1,0 +1,73 @@
+$(window).bind("load", function() {
+  $('#pageloading').fadeOut(500);
+});
+
+var s;
+
+$(document).on('ready', function() {
+  s = skrollr.init();
+  var $body = $('body');
+  var $window = $(window);
+  var $hoverglass = $('.hoverglass');
+  var $lightbox = $('.lightbox');
+  init();
+
+  $window.resize(function() {
+    resizeImg();
+  });
+
+  $hoverglass.on("click", function() {
+    $(this).siblings( ".lightbox" ).toggleClass("active");
+  });
+  $lightbox.on("click", function() {
+    $(this).removeClass("active");
+  })
+
+ 
+});
+
+function playElementAtBounds(id, cur, min, max) {
+  var OFFSET = 100;
+  var e = document.getElementById(id);
+  var $e = $('#' + id)
+  if(cur > min-OFFSET && cur < max+OFFSET ) {
+    e.play();
+    var maxvol = (max+OFFSET - cur)/OFFSET;
+    var minvol = 1 - (min+OFFSET - cur)/(2*OFFSET);
+    if(cur > max-OFFSET && maxvol >= 0 && maxvol <= 1) {
+      e.volume = maxvol;
+    } else if(cur < min+OFFSET && minvol >= 0 && minvol <= 1) {
+      e.volume = minvol;
+    } else {
+      e.volume = 1;
+    }
+  } else {
+    e.pause();
+  }
+}
+
+function init() {
+  resizeImg();
+  $('#audiobg').animate({volume: 0.1}, 1000);
+}
+
+// Calculate new aspect ratio to fit max width and max height;
+function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
+  var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+  return { width: srcWidth*ratio, height: srcHeight*ratio };
+}
+
+// Resize containers/images to fit allowed space of window
+function resizeImg() {
+  $window = $(window);
+  var newRatio = calculateAspectRatioFit( 1280, 720, $window.width(), $window.height() );
+  var $container = $('.container');
+  var $bgimg = $('.bgimg');
+  var $trans1 = $('.transition');
+  $trans1.css('background-size', newRatio.width + 'px ' + newRatio.height + 'px');
+  $container.height(newRatio.height);
+  $container.width(newRatio.width);
+  $bgimg.height(newRatio.height);
+  $bgimg.width(newRatio.width);
+}
+

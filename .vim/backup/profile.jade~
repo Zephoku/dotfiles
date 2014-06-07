@@ -1,0 +1,56 @@
+extends layout  
+
+block links
+  link(rel='stylesheet', href='/css/profile.css')
+
+block scripts
+  script(src="/js/profileUI.js")
+  script(src='/js/search.js')
+  script(src="/js/github.js")
+  script(src="/js/sha1.js")
+  script(src="/js/oauth.js")
+  script(src="/js/openbadges.js")
+
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+
+block content
+  div.content
+    nav.navbar.navbar-default
+      div.container
+        div.navbar-header
+          a.navbar-brand(href="/") Endorser
+        ul.nav.navbar-nav.navbar-right
+          li 
+            a#logout(href="logout") Logout
+    div.app(ng-app='search-module', ng-controller='searchCTRL')
+      div.namebar
+        div.namebar-container
+          img.profileicon(class="img-circle", src='{{userStats.profile_pic}}')
+          span.name {{userStats.first_name}} {{userStats.last_name}}
+          div.connectbuttons
+            button.btn.btn-default.btn#github-button Connect with Github
+            button.btn.btn-default.btn#openbadges-button Connect with OpenBadges
+        div.clear
+      div.content
+        div.search-module
+          div.searchcontent
+            ul.achievementlist(ng-repeat="source in achievements | filter:q")
+              li.achievement(ng-repeat="achieve in source | filter:q", ng-if="achieve.name!=NULL")
+                section.containerB
+                  div#card
+                    img#badge(src="/img/badge.png", width="240")
+                    figure.front
+                      {{achieve.name}}
+                      br
+                    figure.back
+                      {{achieve.subtext}} 
+                      br 
+                      {{achieve.source}}
+          div.clear
+  .hero.footer
+    .container
+      .foot
+        span All Rights Reserved
+        br
+        span By Robert Nguyen, Ryan Chan, Sean Grant, Jared Brown,  Vishal Yadav
+

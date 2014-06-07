@@ -1,0 +1,8 @@
+var poroApp = angular.module('poroApp', []);
+
+poroApp.controller('PoroChampionsCtrl', function($scope, $http) {
+    $http({method: 'GET', url: 'champions.json'})
+    .success(function(data,status,headers,config) {
+        $scope.champions = data;
+    });
+});

@@ -1,0 +1,32 @@
+html { 
+  font-size: 62.5%; 
+} 
+
+body {
+  background-color: #ccc;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 1.5rem;
+  margin: auto;
+  width: 100%;
+}
+
+.red {
+  background-color: #ff5768;
+}
+
+.yellow {
+  background-color: #fff957;
+}
+
+.blue {
+  background-color: #577eff;
+}
+
+.black {
+  background-color: #ffa557;
+}
+
+
+.disabled {
+  background-color: #000;
+}

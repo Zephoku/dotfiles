@@ -1,0 +1,149 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='css/main.css' )
+  link(rel='stylesheet', href='css/flow.css', data-skrollr-stylesheet)
+  link(rel='stylesheet', href='css/ch02.css' )
+  link(rel='stylesheet', href='css/ch02-flow.css', data-skrollr-stylesheet)
+
+block scripts
+  script(src='js/main.js')
+  script(src='js/ch02.js')
+
+block content
+  #pageloading.page
+    img.load(src='img/loading.gif')
+  audio#audiobg(src='media/bgscore.mp3', autoplay, loop)
+  .container
+    #menu
+      .button
+        a(href="/#map")
+          img(src="img/map.png")
+      .button
+        a(href="#")
+          img(src="img/contact.png")
+      .label
+        span MENU
+    .page#page1
+      .text.date#page1date
+        span.pageFont Back to 
+        span  1951
+      .text#page1text
+        span 1951 Manchester Square grows into a vibrant and safe 
+        span.em post-War
+        span  community
+      img.bgimg(src='img/ch02/01.jpg')
+    #transition2.transition
+    .page#page3
+      img.bgimg(src="img/ch02/03.jpg")
+      audio#audio3(src='media/ch02/03-audio.m4a')
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    .page#page4
+      video#video4.bgimg(src="media/ch02/04-video.mp4")
+    .page#page5
+      img.bgimg(src="img/ch02/05.jpg")
+      audio#audio5(src="media/ch02/05-audio.m4a")
+      .hoverglass 
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    #transition6.transition
+    .page#page7
+      .text.date#page7date
+        span 1967
+      .text#page7text1
+        span Surfridge disintegrates
+      .text#page7text2
+        span Manchester Square thrives, unscathed by this expansion
+      img.bgimg(src="img/ch02/07.jpg")
+      audio#audio7(src="media/ch02/07-audio.m4a")
+      .hoverglass 
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    .page#page8
+      video#video8.bgimg(src="media/ch02/08-video.mp4")
+    .page#page8-5
+      .text.date#page8-5date
+        span 1978
+      .text#page8-5text1
+        span LAX expands runways and terminals
+      .text#page8-5text2
+        span Noise increases, more communities disappear
+      img.bgimg(src="img/ch02/8-5.jpg")
+    .page#page9
+      img.bgimg(src="img/ch02/09.jpg")
+      audio#audio9(src="media/ch02/09-audio.m4a")
+      .hoverglass 
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    .page#page10
+      video#video10.bgimg(src="media/ch02/10-video.mp4")
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+ 
+    #transition11.transition
+    .page#page12
+      img.bgimg(src="img/ch02/12.jpg")
+      audio#audio12(src="media/ch02/12-audio.m4a")
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    .page#page13
+      video#video13.bgimg(src="media/ch02/13-video.mp4")
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+ 
+    .page#page14
+      img.bgimg(src="img/ch02/14.jpg")
+      audio#audio14(src="media/ch02/14-audio.m4a")
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    #transition15.transition
+    .page#page16
+      .bglightbox#page16lightbox
+        .text#page16text1
+          span In 1999
+        .text#page16text2
+          span LAX announced a Voluntary Buyout Program for Manchester Square residents.  Fewer than a dozen homes of three-hundred homes remain.
+      img.bgimg(src="img/ch02/16.jpg")
+      audio#audio16(src="media/ch02/16-audio.m4a")
+      .hoverglass
+        img(src='img/magnifyglass.png')
+      .lightbox 
+        .hovertext
+          span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    .page#page17
+      .text#page17text1
+        span PART 3
+      .text#page17text2
+        span Continue 
+      .text#page17text3
+        span on to
+      .text#page17text4
+        span "Here Sits Little Detroit"
+      .text#page17text5
+        a(href="/chapter3.html")
+          img(src="img/ch02/nextchapterarrow.png")
+      img.bgimg(src="img/ch02/17.jpg")
+
+

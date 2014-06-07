@@ -1,0 +1,217 @@
+@import "bourbon/bourbon";
+@import "bitters/bitters";
+@import "neat/neat";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300);
+
+#transition5 {
+  width: 500px;
+	background:url(../img/ch01/Crop-Mines-Marker.jpg) no-repeat 0 0;
+  background-position: 20% 0%;
+}
+
+#transition7 {
+  width: 800px;
+	background:url(../img/ch01/CropSurfridge.jpg) no-repeat 0 0;
+  background-position: 20% 0%;
+}
+
+#transition11 {
+  width: 1400px;
+	background:url(../img/ch01/OlympicGames.jpg) no-repeat 0 0;
+  background-position: 0% 0%;
+}
+
+#transition13 {
+  width: 600px;
+	background:url(../img/ch01/warworkers.jpg) no-repeat 0 0;
+  background-position: 0% 0%;
+}
+
+#transition26 {
+  width: 600px;
+	background:url(../img/ch01/womenandsound.jpg) no-repeat 0 0;
+  background-position: 0% 0%;
+}
+
+#page1 .text {
+  width: 100%;
+  text-align: left;
+}
+
+#page1text1 {
+  top: 3%;
+  left: 3%;
+}
+#page1text2 {
+  top: 12%;
+  left: 12%;
+}
+#page2text1 {
+  top: 2%;
+  left: 2%;
+}
+#page2text2 {
+  top: 10%;
+  left: 10%;
+}
+
+#page3text1 {
+  top: 12%;
+  left: 5%;
+}
+#page3text2 {
+  top: 20%;
+  left: 20%;
+}
+#page6date {
+  top: 3%;
+  left: 3%;
+}
+#page6text1 {
+  top: 12%;
+  left: 8%;
+}
+#page6text2 {
+  top: 20%;
+  left: 16%;
+}
+#page8date {
+  top: 4%;
+  left: 4%;
+}
+#page8text {
+  width: 80%;
+  top: 12%;
+  left: 8%;
+}
+#page9 .text {
+  color: #fff;
+}
+#page9text1 {
+  top: 12%;
+  left: 5%;
+}
+#page9text2 {
+  top: 20%;
+  left: 20%;
+}
+#page10text {  
+  width: 40%;
+  top: 5%;
+  left: 2%;
+}
+#page12date {
+  top: 3%;
+  left: 3%;
+}
+#page12text1 {
+  top: 11%;
+  left: 9%;
+}
+#page12text2 {
+  top: 19%;
+  left: 19%;
+}
+#page12text3 {
+  top: 27%;
+  left: 27%;
+}
+#page14 > .text {
+  text-align: center;
+  width: 100%;
+}
+#page14text1 {
+  top: 8%;
+}
+#page14text2 {
+  top: 20%;
+  color: #fff;
+}
+#page18date {
+  top: 3%;
+  left: 3%;
+}
+#page18text1 {
+  top: 22%;
+  left: 8%;
+}
+#page18text2 {
+  top: 30%;
+  left: 24%;
+}
+#page21text1 {
+  top: 1%;
+  left: 12%;
+  width: 30%;
+}
+#page21text2 {
+  top: 1%;
+  left: 48%;
+  width: 30%;
+}
+#page21date {
+  top: 4%;
+  right: 8%;
+}
+#page22 > .text {
+  color: #fff;
+  width: 24%;
+  text-align: right;
+}
+#page22text1 {
+  top: 3%;
+  right: 2%;
+}
+#page22text2{
+  top: 40%;
+  right: 2%;
+}
+#page23text1 {
+  top: 7%;
+  left: 4%;
+}
+#page23text2 {
+  top: 14%;
+  left: 6%;
+}
+#page27text {
+  width: 50%;
+  top: 8%;
+  left: 50%;
+}
+#page27date {
+  top: 54%;
+  left: 55%;
+}
+#page28 > .text {
+  color: #fff;
+  width: 40%;
+  text-align: right;
+}
+#page28text1 {
+  top: 20%;
+  right: 5%;
+}
+#page28text2 {
+  top: 40%;
+  right: 5%;
+}
+#page28text3 {
+  top: 50%;
+  right: 5%;
+}
+#page28text4 {
+  top: 60%;
+  right: 5%;
+}
+#page28text5 {
+  top: 70%;
+  right: 5%;
+}
+.filmreel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

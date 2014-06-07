@@ -1,0 +1,143 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='css/main.css' )
+  link(rel='stylesheet', href='css/flow.css', data-skrollr-stylesheet)
+  link(rel='stylesheet', href='css/credits.css' )
+
+block scripts
+  script(src='js/main.js')
+
+block content
+  audio#audiobg(src='media/bgscore.mp3', autoplay, loop)
+  .container
+    .page#page1
+      .text.header
+        a(href="/")
+          span.headertext Manchester Square
+      .text.website
+        a(href="http://www.jackie-watson.com") www.jackie-watson.com
+      .text.contact
+        a(href="mailto:jackie.p.watson@gmail.com") contact
+      .credits
+        ul.names
+          li 
+            .name
+              span Jacquelyn Watson
+            .divider
+              span |
+            .title
+              span Director
+          li 
+            .name
+              span Robert Nguyen
+            .divider
+              span |
+            .title
+              span Web Developer
+          li 
+            .name
+              span Raza Rizvi
+            .divider
+              span |
+            .title
+              span Director of Photography
+          li 
+            .name
+              span Taylor Tang
+            .divider
+              span |
+            .title
+              span Associate Producer
+          li 
+            .name
+              span Gabriela Avendano
+            .divider
+              span |
+            .title
+              span Associate Producer
+          li 
+            .name
+              span Mary Jo De Silva
+            .divider
+              span |
+            .title
+              span Associate Producer
+          li 
+            .name
+              span Chloe Booher
+            .divider
+              span |
+            .title
+              span Graphic Designer
+          li  
+            .name
+              span Jacquelyn Watson
+            .divider
+              span |
+            .title
+              span Editor
+          li 
+            .name
+              span Vincent Vole
+            .divider
+              span |
+            .title
+              span Assistant Editor
+          li 
+            .name
+              span David Gomez
+            .divider
+              span |
+            .title
+              span Camera Operator
+          li 
+            .name
+              span Jake Broud Stein
+            .divider
+              span |
+            .title
+              span Composer
+          li 
+            .name
+              span Jacquelyn Watson
+            .divider
+              span |
+            .title
+              span Photography
+          li 
+            .name
+              span Raza Rizvi
+            .divider
+              span |
+            .title
+              span Photography
+          li 
+            .name
+              span Taylor Schlossberg
+            .divider
+              span |
+            .title
+              span Location Scout
+          li.section Featuring
+          li Al Scates
+          li Denny Schneider
+          li Vicky Tarleton
+          li Jim Tarleton
+          li Marty
+          li Simon Packman
+          li Charlie
+          li.section Special Thanks to
+          li Thomas Burns
+          li Fabian Wagmister
+          li Jeff Burke
+          li Wilm Thoben
+          li Bruce Hyslop
+          li Watson Family
+          li 186C Documentary Class
+          li Zoe Sandoval
+          li Cole Dalton Baker
+          li Tyler Schwartz
+          li.logo
+            img(src="img/logo_blue.png")
+      img.bgimg(src='img/creditsbg.png') 

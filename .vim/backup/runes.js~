@@ -1,0 +1,62 @@
+/*
+ * GET rune info
+ */
+var Rune = require('../libs/Rune.js');
+var runes = require('../source/rune.json').data;
+var validRunes = [];
+var rune, simpleRune;
+
+var statValueRegex = /\+?\-?\d+\.?\d*\%?/;
+var statDescriptionRegex = /\s([a-zA-z]*\s?[a-zA-z]*\s?[a-zA-Z]*)/;
+
+function getRuneScale(rune) {
+  if (rune.tags.indexOf('perLevel') > -1) {
+    return 'perLevel';
+  }
+  if (rune.tags.indexOf('percent') > -1 ) {
+    return 'percent';
+  } 
+  if (rune.tags.indexOf('flat') > -1) {
+    return 'flat';
+  }
+
+  return null;
+}
+
+for (rune in runes) {
+  if(runes.hasOwnProperty(rune)) {
+    if (runes[rune].rune.tier === '3') {
+      simpleRune = new Rune();
+      simpleRune.name = runes[rune].name;
+      simpleRune.statValue = statValueRegex.exec(runes[rune].description)[0];
+      simpleRune.statDescription = statDescriptionRegex.exec(runes[rune].description)[1];
+      simpleRune.statScale = getRuneScale(runes[rune]);
+      if (simpleRune.statScale === 'perLevel') {
+        simpleRune.statPerLevelValue = simpleRune.statValue * 18;
+        simpleRune.statPerLevelValue = simpleRune.statPerLevelValue.toFixed(2);
+        simpleRune.statPerLevelDescription = 'at lvl 18';
+      }
+      else {
+        simpleRune.statPerLevelValue = "";
+        simpleRune.statPerLevelDescription = "";
+      }
+      simpleRune.tier = runes[rune].rune.tier;
+      simpleRune.type = runes[rune].rune.type;
+      simpleRune.stats = runes[rune].stats;
+      simpleRune.tags = runes[rune].tags;
+
+      console.log(simpleRune);
+      validRunes.push(simpleRune);
+    }
+  }
+}
+
+// Return all valid runes
+exports.all = function(req, res){
+  res.send(validRunes);
+};
+
+// Return rune builder view
+exports.builder = function(req, res) {
+  res.render('runes', { title: "Rune Builder" });
+};

@@ -1,0 +1,17 @@
+// Class for containing runes parsed from Riot Games
+//
+module.exports = function Rune() {
+    this.name = null;
+    this.statValue = null;
+    this.statDescription = null;
+    this.statPerLevelValue = null;
+    this.statPerLevelDescription = null;
+    this.tier = null;
+    this.type = null;
+    this.isPerLevel = false;
+    this.stats = {};
+    this.tags = [];
+    this.amount = 0;
+};
+
+

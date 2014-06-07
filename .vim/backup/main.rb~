@@ -1,0 +1,30 @@
+require 'sinatra'
+require 'slim'
+require 'json'
+
+set :slim, :pretty => true
+
+get '/' do
+    slim :index
+end
+
+get '/champions.json' do
+    content_type :json
+    [
+        { 
+            'name' =>  'Ahri'
+        },
+        {
+            'name' => 'Alistar'
+        },
+        {
+            'name' => 'Zed'
+        }
+    ].to_json
+    {
+        'name' => 'ahri',
+        'name' => 'ahri2',
+        'name' => 'ahri3'
+    }.to_json
+end
+

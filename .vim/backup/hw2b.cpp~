@@ -1,0 +1,46 @@
+#include <omp.h>
+#include <stdio.h>
+#include <stdlib.h> 
+
+int is_prime (int p) { 
+  int i;
+  if (p < 2) 
+    return 0; 
+  i = 2;
+  while (i*i <= p) {
+    if (p % i == 0) 
+      return 0;
+    i++; 
+  }
+  return 1; 
+}
+
+void find_prime_nums (int n, int t) {
+  int i,tid;
+  omp_set_num_threads(t);
+
+  // Initial case
+  if (n >=2 ) {
+    printf("2");
+  }
+
+#pragma omp parallel for ordered schedule(dynamic, 1)
+  for (i = 3; i <= n; i++)
+  {
+    if ( is_prime(i) ) {
+#pragma omp ordered
+      printf(", %d", i);
+    }
+  }
+
+}
+
+int main(int argc, char* argv[]) {
+  if (argc < 3)
+    return -1;
+  int maxNum = atoi(argv[1]);
+  int threads = atoi(argv[2]);
+  
+  find_prime_nums(maxNum, threads);
+  printf("\n");
+}

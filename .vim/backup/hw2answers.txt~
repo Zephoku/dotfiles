@@ -1,0 +1,82 @@
+//Homework Problem #1
+for 1 <= i <= n pardo
+  w(i) = 1
+  Set S(i) = ArrayIndex
+  while S(i) != S(S(i)) do
+    Set W(i) = W(i) + W(S(i))
+    Set S(i) = S(S(i))
+
+Complexity:
+Time: O(n log( n ))
+Work: O(n log( n ))
+  
+
+Questions Related to Problem 2:
+1.)
+hw2a 1 thread
+35.216u 0.072s 3:29.14 16.8%	0+0k 0+0io 0pf+0w
+
+hw2a 2 thread
+46.537u 0.094s 3:22.65 23.0%	0+0k 0+0io 0pf+0w
+
+hw2a 4 thread
+35.311u 0.071s 4:04.33 14.4%	0+0k 0+0io 0pf+0w
+
+hw2a 8 thread
+44.842u 0.091s 3:32.96 21.0%	0+0k 0+0io 0pf+0w
+
+hw2a 16 thread
+55.346u 0.108s 3:17.66 28.0%	0+0k 0+0io 0pf+0w
+
+2.)
+Dynamic Sizes:
+hw2b 1 thread
+38.931u 0.080s 3:35.79 18.0%	0+0k 24+0io 0pf+0w
+
+hw2b 2 thread
+94.787u 3.447s 3:31.90 46.3%	0+0k 0+0io 0pf+0w
+
+hw2b 4 thread
+170.714u 6.054s 3:37.23 81.3%	0+0k 0+0io 0pf+0w
+
+hw2b 8 thread
+285.204u 8.307s 3:57.44 123.6%	0+0k 0+0io 0pf+0w
+
+hw2b 16 thread
+576.758u 10.738s 3:17.93 296.8%	0+0k 0+0io 0pf+0w
+Dynamic scheduling does not show much improvement over the implementation done in 
+problem 1.  This could be due to the overhead of printing of the results using
+printf causing a slowdown of execution.
+
+
+Chunk Sizes:
+hw2b chunk = 2
+869.400u 6.621s 3:44.62 390.0%	0+0k 24+0io 0pf+0w
+
+hw2b chunk = 4
+421.536u 3.504s 3:33.47 199.1%	0+0k 24+0io 0pf+0w
+
+hw2b chunk = 8
+372.936u 1.849s 3:27.45 180.6%	0+0k 24+0io 0pf+0w
+
+hw2b chunk = 16
+383.109u 0.724s 3:29.62 183.1%	0+0k 24+0io 0pf+0w
+
+hw2b chunk = 32
+657.592u 0.829s 3:57.60 277.1%	0+0k 0+0io 0pf+0w
+
+The trend in execution time seems to be that execution time decreases as chunk size increases.
+This is due to the overhead of switching between threads in small chunks many times.
+A higher chunk size means a thread doesn't have to wait on other threads as much, which causes
+the program to run faster.
+
+3.)
+Some potential hazards that two threads can run into when they have a shared resource is that
+one thread can write to it, while the other thread is using it.  If there is a misorder of
+which threads writes to a resource first, another thread's data can be lost.
+Also, if dealing with pointers, or arrays, then an index could be not up to date, which can cause a
+segmentation fault.
+One of the problems I discovered during developement was a segmentation fault occassionally.
+I found out that it was due to not instantiating the write private variables in the directive.
+I also  had a problem with making sure each thread had safe access to their arraws.  I implemented an
+atomic buffer index that each thread had access to.

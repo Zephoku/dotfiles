@@ -1,0 +1,82 @@
+#include <omp.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+struct Coord {
+  Coord() {};
+
+  double x;
+  double y;
+};
+
+double monteCarlo (int n) {
+  int numIn = 0;
+  int numBuffer = -1;
+  Coord buffer [32];
+  double x,y,r,i;
+
+#pragma omp parallel sections shared(numIn, numBuffer) private(x,y,r,i)
+{
+    #pragma omp section 
+    {
+      // Production
+      for (i = 0; i < n; i++) {
+        while (31 <= numBuffer) {
+        }
+
+        // Producers
+        x = (double) rand() / RAND_MAX;
+        y = (double) rand() / RAND_MAX;
+    
+        #pragma omp atomic
+        numBuffer++;
+
+        buffer[numBuffer].x = x;
+        buffer[numBuffer].y = y;
+        #pragma omp flush(numBuffer, buffer)
+    
+      }
+    
+    }
+    #pragma omp section 
+    {
+      // Consumption
+      for (i = 0; i < n; i++) {
+        while(numBuffer < 0) {
+        }
+
+        x = buffer[numBuffer].x;
+        y = buffer[numBuffer].y;
+
+        #pragma omp atomic
+        numBuffer--;
+
+        #pragma omp flush(numBuffer, buffer)
+    
+        // Consumers
+        r = sqrt( pow((x - 0.5), 2) + pow((y - 0.5), 2) );
+        if (r <= 0.5) {
+        #pragma omp atomic
+          numIn++;
+        }
+      }
+    }
+}
+
+  double PI = 4.0 * numIn / n;
+  return PI;
+}
+
+int main (int argc, char* argv[]) {
+  if (argc < 2)
+    return -1;
+  int nPoints = atoi(argv[1]);
+  srand (time(NULL));
+	omp_set_num_threads(2);
+
+  printf("%f \n", monteCarlo(nPoints));
+}
+
+

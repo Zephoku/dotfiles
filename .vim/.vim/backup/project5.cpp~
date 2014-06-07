@@ -1,0 +1,83 @@
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+int pack(int lineLength, istream& inf, ostream& outf);
+
+int main() {
+	const int MAX_FILENAME_LENGTH = 100;
+	for (;;) {
+		// cout << "Enter input file name (or q to quit): ";
+		// char filename[MAX_FILENAME_LENGTH];
+		// cin.getline(filename, MAX_FILENAME_LENGTH);
+
+		// if (strcmp(filename, "q") == 0)
+		// break;
+
+		ifstream infile("test.txt");
+		if (!infile) {
+			cerr << "Cannot open text.txt!" << endl;
+			continue;
+		}
+
+		cout << "Enter maximum line length: ";
+		int len;
+		cin >> len;
+		cin.ignore(10000, '\n');
+		int returnCode = pack(len, infile, cout);
+		//cout << "Return code is " << returnCode << endl;
+	}
+}
+
+int pack(int lineLength, istream& inf, ostream& outf) {
+	char word[500];
+	word[0] = '\0';
+
+	int currentLineLength = 0;
+  int spaceCount = 0;
+
+	while(! inf.eof()) {
+		char c;
+		char c2[2];
+
+		inf.get(c);
+
+		c2[0] = c;
+		c2[1] = '\0';
+
+		if(isspace(c)) {
+			// DONT USE SIZEOF TO GET LENGTH OF CSTRING
+      spaceCount++;
+      if (spaceCount > 2) {
+        continue;
+      }
+
+      // Do any #P type processing here
+			if(strcmp(word, "#P#") == 0) {
+				outf << endl << endl;
+        currentLineLength = 0;
+      } else if(currentLineLength + strlen(word) + 1 > lineLength) {
+			// Start a new line if needed
+				outf << endl;
+        outf << word;
+				currentLineLength = strlen(word);
+        outf << ' ';
+			} else {
+				currentLineLength += strlen(word) + 1;
+				outf << word;
+        outf << ' ';
+			}
+
+			// reset word c-string
+			word[0] = '\0';
+		} else {
+			// append character to c string
+      spaceCount = 0;
+			strcat(word, c2);
+      //outf << c;
+		}
+	}
+
+	return 0;
+}

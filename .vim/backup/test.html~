@@ -1,0 +1,8 @@
+<h3>JPEG Image</h3>
+<h1>Hello There</h1>
+<br>
+
+<img src="img1.jpeg">
+
+<h3>GIF Image</h3>
+<img src="img2.gif">

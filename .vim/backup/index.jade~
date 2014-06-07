@@ -1,0 +1,49 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='css/main.css')
+  link(rel='stylesheet', href='css/index.css')
+  link(rel='stylesheet', href='css/index-flow.css', data-skrollr-stylesheet)
+
+block scripts
+  script(src='js/main.js')
+  script(src="js/index.js")
+
+block content
+  .container
+    .page#page1
+      img.bgimg(src='img/backdrop.png')
+      .scrollarrow
+        img(src='img/scrollarrow.png')
+    .page#parallax
+      img.bgimg(src='img/missionstatementbackdrop.png')
+      .text-container
+        .text
+          p This is a memoir and history of a small neighborhood near Los Angeles Airport called
+          p Manchester Square.
+          p Falling victim to airport expansion, the community has slowly disintegrated.
+          p Only a fraction of the community still remains.
+    .page#page2
+      .mapslider
+        .map.map1.active
+          img(src='img/map1.png')
+        .map.map2
+          img(src='img/map2.png')
+        .map.map3
+          img(src='img/map3.png')
+      .timeline
+        .slider-offset
+          #slider
+            .tick.tick1
+            .tick.tick2
+            .tick.tick3
+      .titles
+        .title.part1.active
+          .label Part 1 - Development
+          a(href="/chapter1.html") HOG FARMS AND MINES FIELD
+        .title.part2
+          .label Part 2 - Recall
+          a(href="/chapter2.html") THE GOOD OLD GUYS
+        .title.part3
+          .label Part 3 - Result
+          a(href="/chapter3.html") RESPONDING TO JOSEPH'S HAMMER
